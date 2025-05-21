@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Global Trend - Product Page</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Global Trend - Product Page</h1>
+
+        <form onsubmit="" class="">
+            <input type="text" name="" id="search" placeholder="Search for products..." />
+            <button class="btn" type="submit">Search</button>
+        </form>
+
+        <div class="profile">
+            <div class="circle">
+                <img src="assets/profile.jpeg" alt="Profile Picture" />
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Section 1: Scrollable Product Images Gallery -->
+        <section id="section-1">
+            <div class="left-section">
+                <div class="product-gallery">
+                    <!-- Main Image Display -->
+                    <div class="gallery-main-image">
+                        <img id="mainProductImage" src="assets/product-01.jpg" alt="Main Product Image"
+                            class="main-image" />
+                    </div>
+
+                    <!-- Thumbnail Scrollable List -->
+                    <div class="gallery-thumbnails" id="galleryThumbnails">
+                        <button class="thumbnail-item active">
+                            <img src="assets/product-01.jpg" alt="Thumbnail 1" />
+                        </button>
+                        <button class="thumbnail-item">
+                            <img src="assets/product-02.jpeg" alt="Thumbnail 2" />
+                        </button>
+                        <button class="thumbnail-item">
+                            <img src="assets/product-03.jpeg" alt="Thumbnail 3" />
+                        </button>
+                        <button class="thumbnail-item">
+                            <img src="assets/product-04.jpeg" alt="Thumbnail 4" />
+                        </button>
+                        <button class="thumbnail-item">
+                            <img src="assets/product-05.jpeg" alt="Thumbnail 5" />
+                        </button>
+                        <button class="thumbnail-item">
+                            <img src="assets/product-03.jpeg" alt="Thumbnail 3" />
+                        </button>
+                        <button class="thumbnail-item">
+                            <img src="assets/product-04.jpeg" alt="Thumbnail 4" />
+                        </button>
+                        <button class="thumbnail-item">
+                            <img src="assets/product-05.jpeg" alt="Thumbnail 5" />
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-details">
+                <!-- Product Title and Description -->
+                <div class="">
+                    <h2 class="product-title">Stylish T-Shirt</h2>
+                    <p class="product-description">
+                        A stylish t-shirt made from 100% organic cotton. Available in
+                        various colors and sizes. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur
+                        accusantium recusandae vel facilis dolorum. Soluta molestias quisquam sint, nam vitae nulla
+                        minima quasi aut distinctio repudiandae tempore alias nobis qui nisi enim culpa necessitatibus
+                        veniam optio ab, aperiam voluptates! Recusandae at reiciendis exercitationem nesciunt deserunt
+                        delectus nemo nobis vel voluptates voluptatum laboriosam qui consectetur unde labore, ipsum
+                        tempora! Harum quasi, dolorum corporis iure alias ducimus voluptate laudantium voluptatum
+                        quisquam distinctio quibusdam natus quod soluta cupiditate sint vel, quas ipsa unde velit minus
+                        expedita at deserunt autem quaerat. Veritatis consectetur provident aliquid dolorem, doloribus
+                        cum? Autem quidem reiciendis laborum blanditiis harum?
+                    </p>
+                    <p class="product-price">$29.99</p>
+                    <button class="btn add-to-cart-btn">Add to Cart</button>
+                    <button class="btn buy-now-btn">Buy Now</button>
+                </div>
+                <div class="product-variants">
+                    <div class="variant-group">
+                        <label>Size:</label>
+                        <div class="size-options">
+                            <label>
+                                <input type="radio" name="size" value="S" checked />
+                                Small
+                            </label>
+                            <label>
+                                <input type="radio" name="size" value="M" />
+                                Medium
+                            </label>
+                            <label>
+                                <input type="radio" name="size" value="L" />
+                                Large
+                            </label>
+                            <button id="openSizeChart" class="btn size-chart-btn">
+                                Size Chart
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Section 3: Product Variants (Color) -->
+                <div class="variant-group">
+                    <label>Color:</label>
+                    <div class="color-swatches">
+                        <button class="color-swatch" data-img="assets/product-05.jpeg" style="background-color: red"
+                            title="Red"></button>
+                        <button class="color-swatch" data-img="assets/product-04.jpeg" style="background-color: blue"
+                            title="Blue"></button>
+                        <button class="color-swatch" data-img="assets/product-03.jpeg" style="background-color: black"
+                            title="Black"></button>
+                        <button class="color-swatch" data-img="assets/product-06.jpeg" style="background-color: yellow"
+                            title="Yellow"></button>
+                    </div>
+                </div>
+
+                <!-- Section 4: Compare Colours Button -->
+                <div class="compare-colors">
+                    <!-- <button id="openCompareModal" class="btn compare-btn">
+                        Compare Colours
+                    </button> -->
+
+                    <!-- Modal for Color Comparison -->
+                    <div id="compareModal" class="modal hidden">
+                        <div class="modal-overlay" id="compareOverlay"></div>
+                        <div class="modal-content">
+                            <button class="modal-close" id="closeCompareModal">
+                                &times;
+                            </button>
+                            <h3>Compare Colours</h3>
+                            <div class="compare-swatches" id="compareSwatches">
+                                <!-- JS will fill selected swatches -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 5: Pair Well With (Recommendation Carousel) -->
+                <section class="pair-well-with">
+                    <h2>Pair Well With</h2>
+                    <div class="recommendation-carousel">
+                        <div class="product-card">
+                            <div class="image">
+                                <img src="assets/pair1.webp" alt="Item 1" />
+                            </div>
+                            <h4>Hat</h4>
+                            <p>$19.99</p>
+                            <button class="btn">Add to Cart</button>
+                        </div>
+                        <div class="product-card">
+                            <div class="image">
+                                <img src="assets/pair3.webp" alt="Item 2" />
+                            </div>
+                            <h4>Socks</h4>
+                            <p>$9.99</p>
+                            <button class="btn">Add to Cart</button>
+                        </div>
+                        <div class="product-card">
+                            <div class="image">
+                                <img src="assets/pair4.webp" alt="Item 3" />
+                            </div>
+                            <h4>Sunglasses</h4>
+                            <p>$29.99</p>
+                            <button class="btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 6: Product Bundle Suggestion -->
+                <section class="product-bundle">
+                    <h2>Buy These Together</h2>
+                    <div class="bundle-items">
+                        <div class="bundle-product">
+                            <img id="mainBundleImage" src="assets/product-01.jpg" alt="Main Product" />
+                            <p>$49.99</p>
+                        </div>
+                        <div class="bundle-plus">+</div>
+                        <div class="bundle-product">
+                            <img src="assets/pair2.webp" alt="Bundle Item 1" />
+                            <p>$19.99</p>
+                        </div>
+                    </div>
+                    <p class="bundle-total">Total: <strong>$69.98</strong></p>
+                    <button class="btn add-bundle-btn">Add Bundle to Cart</button>
+                </section>
+
+                <div class="product-tabs">
+                    <div class="tab-buttons">
+                        <button class="tab-btn active" data-tab="desc">Description</button>
+                        <button class="tab-btn" data-tab="info">Product Information</button>
+                        <button class="tab-btn" data-tab="shipping">Shipping Details</button>
+                    </div>
+
+                    <div id="desc" class="tab-content active">
+                        <p>A stylish t-shirt made from 100% organic cotton. Available in various colors and sizes Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur accusantium recusandae vel
+                            facilis dolorum. Soluta molestias quisquam sint, nam vitae nulla minima quasi aut distinctio
+                            repudiandae tempore alias nobis qui nisi enim culpa necessitatibus veniam optio ab, aperiam
+                            voluptates! Recusandae at reiciendis exercitationem nesciunt deserunt delectus nemo nobis
+                            vel voluptates voluptatum laboriosam qui consectetur unde labore, ipsum tempora! Harum
+                            quasi, dolorum corporis iure alias ducimus voluptate laudantium voluptatum quisquam
+                            distinctio quibusdam natus quod soluta cupiditate sint vel, quas ipsa unde velit minus
+                            expedita at deserunt autem quaerat. Veritatis consectetur provident aliquid dolorem,
+                            doloribus cum? Autem quidem reiciendis laborum blanditiis harum? </p>
+                    </div>
+                    <div id="info" class="tab-content">
+                        <div class="product-specs">
+                            <div class="spec-grid">
+                                <div class="spec-item"><strong>Type</strong><span>Polo Neck</span></div>
+                                <div class="spec-item"><strong>Sleeve</strong><span>Half Sleeve</span></div>
+                                <div class="spec-item"><strong>Fit</strong><span>Regular</span></div>
+                                <div class="spec-item"><strong>Fabric</strong><span>Cotton Blend</span></div>
+                                <div class="spec-item"><strong>Sales Package</strong><span>1 T-shirt</span></div>
+                                <div class="spec-item"><strong>Pack of</strong><span>1</span></div>
+                                <div class="spec-item"><strong>Style Code</strong><span>POLO_PATA_CAMEL</span></div>
+                                <div class="spec-item"><strong>Neck Type</strong><span>Polo Neck</span></div>
+                                <div class="spec-item"><strong>Ideal For</strong><span>Men</span></div>
+                                <div class="spec-item"><strong>Size</strong><span>S</span></div>
+                                <div class="spec-item"><strong>Pattern</strong><span>Striped</span></div>
+                                <div class="spec-item"><strong>Suitable For</strong><span>Western Wear</span></div>
+                                <div class="spec-item"><strong>Fabric Care</strong><span>Gentle Machine Wash</span>
+                                </div>
+                                <div class="spec-item"><strong>Net Quantity</strong><span>1</span></div>
+                            </div>
+                            <p class="product-description">A stylish t-shirt made from 100% organic cotton. Available in
+                                various colors and sizes. Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                Pariatur accusantium recusandae vel facilis dolorum. Soluta molestias quisquam sint, nam
+                                vitae nulla minima quasi aut distinctio repudiandae tempore alias nobis qui nisi enim
+                                culpa necessitatibus veniam optio ab, aperiam voluptates! Recusandae at reiciendis
+                                exercitationem nesciunt deserunt delectus nemo nobis vel voluptates voluptatum
+                                laboriosam qui consectetur unde labore, ipsum tempora! Harum quasi, dolorum corporis
+                                iure alias ducimus voluptate laudantium voluptatum quisquam distinctio quibusdam natus
+                                quod soluta cupiditate sint vel, quas ipsa unde velit minus expedita at deserunt autem
+                                quaerat. Veritatis consectetur provident aliquid dolorem, doloribus cum? Autem quidem
+                                reiciendis laborum blanditiis harum?</p>
+                        </div>
+
+                    </div>
+                    <div id="shipping" class="tab-content">
+                        <p>Ships within 2–3 business days. Free returns within 10 days of delivery.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="zoom-container"></div>
+        </section>
+
+        <div id="sizeChartModal">
+            <div class="modal-content">
+                <div class="close">
+                    <button id="closeSizeChart" class="close-btn btn">Ⅹ</button>
+                </div>
+                <!-- Left Column: Table -->
+                <table class="size-chart-table">
+                    <thead>
+                        <tr>
+                            <th>Size</th>
+                            <th>Chest</th>
+                            <th>Brand Size</th>
+                            <th>Shoulder</th>
+                            <th>Length</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>M</td>
+                            <td>38</td>
+                            <td>M</td>
+                            <td>15</td>
+                            <td>26</td>
+                        </tr>
+                        <tr>
+                            <td>L</td>
+                            <td>40</td>
+                            <td>L</td>
+                            <td>16</td>
+                            <td>27</td>
+                        </tr>
+                        <tr>
+                            <td>XL</td>
+                            <td>42</td>
+                            <td>XL</td>
+                            <td>17</td>
+                            <td>28</td>
+                        </tr>
+                        <tr>
+                            <td>XXL</td>
+                            <td>44</td>
+                            <td>XXL</td>
+                            <td>18</td>
+                            <td>29</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- Right Column: Info -->
+                <div class="size-chart-info">
+                    <h4>Measuring T Shirt Size</h4>
+                    <p><strong>Shoulder</strong> - Measure from the edge to edge with arms relaxed at both sides.</p>
+                    <p><strong>Chest</strong> - Measure around the body under the arms at the fullest part.</p>
+                    <p><strong>Sleeve</strong> - Measure from the shoulder seam to the cuff.</p>
+                    <p><strong>Neck</strong> - Measure around the neck horizontally.</p>
+                    <p><strong>Length</strong> - From the highest shoulder point to the bottom hem.</p>
+                    <img src="assets/size-guide.jpeg" alt="Size Guide Illustration" />
+                </div>
+            </div>
+        </div>
+
+        <section class="section-2">
+            <h2>Related Products</h2>
+            <div class="related-products">
+                <div class="product-card">
+                    <div class="badge">
+                        <span class="new">New</span>
+                    </div>
+                    <img src="assets/product-02.jpeg" alt="Product 1" />
+                    <h4>Casual Shirt</h4>
+                    <p>$39.99</p>
+                    <button class="btn">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <div class="badge">
+                        <span class="new">Popular</span>
+                    </div>
+                    <img src="assets/product-03.jpeg" alt="Product 2" />
+                    <h4>Formal Pants</h4>
+                    <p>$49.99</p>
+                    <button class="btn">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="assets/product-04.jpeg" alt="Product 3" />
+                    <h4>Summer Shorts</h4>
+                    <p>$29.99</p>
+                    <button class="btn">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <div class="badge">
+                        <span class="new">New</span>
+                    </div>
+                    <img src="assets/product-02.jpeg" alt="Product 1" />
+                    <h4>Casual Shirt</h4>
+                    <p>$39.99</p>
+                    <button class="btn">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <div class="badge">
+                        <span class="new">Popular</span>
+                    </div>
+                    <img src="assets/product-03.jpeg" alt="Product 2" />
+                    <h4>Formal Pants</h4>
+                    <p>$49.99</p>
+                    <button class="btn">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <div class="badge">
+                        <span class="new">Popular</span>
+                    </div>
+                    <img src="assets/product-04.jpeg" alt="Product 3" />
+                    <h4>Summer Shorts</h4>
+                    <p>$29.99</p>
+                    <button class="btn">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="assets/product-02.jpeg" alt="Product 1" />
+                    <h4>Casual Shirt</h4>
+                    <p>$39.99</p>
+                    <button class="btn">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="assets/product-03.jpeg" alt="Product 2" />
+                    <h4>Formal Pants</h4>
+                    <p>$49.99</p>
+                    <button class="btn">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <div class="badge">
+                        <span class="new">New</span>
+                    </div>
+                    <img src="assets/product-04.jpeg" alt="Product 3" />
+                    <h4>Summer Shorts</h4>
+                    <p>$29.99</p>
+                    <button class="btn">Add to Cart</button>
+                </div>
+            </div>
+
+        </section>
+
+
+    </main>
+
+    <footer></footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
