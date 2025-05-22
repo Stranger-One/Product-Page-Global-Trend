@@ -26,7 +26,7 @@ swatches.forEach((swatch) => {
 });
 
 // Compare Colors Modal
-const openCompareModal = document.getElementById("openCompareModal");
+// const openCompareModal = document.getElementById("openCompareModal");
 const compareModal = document.getElementById("compareModal");
 const closeCompareModal = document.getElementById("closeCompareModal");
 const compareOverlay = document.getElementById("compareOverlay");
@@ -42,10 +42,10 @@ swatches.forEach((swatch) => {
   });
 });
 
-openCompareModal.addEventListener("click", () => {
-  compareSwatches.innerHTML = selectedColors.join("");
-  compareModal.classList.remove("hidden");
-});
+// openCompareModal.addEventListener("click", () => {
+//   compareSwatches.innerHTML = selectedColors.join("");
+//   compareModal.classList.remove("hidden");
+// });
 
 closeCompareModal.addEventListener("click", () => {
   compareModal.classList.add("hidden");
@@ -112,17 +112,17 @@ const zoomContainer = document.querySelector(".zoom-container");
 
 // Zoom effect on hover with zoom container filling the image area
 mainImageContainer.addEventListener("mousemove", function (e) {
-    const img = mainImageContainer.querySelector("img");
-    const rect = mainImageContainer.getBoundingClientRect();
-    const x = ((e.clientX - rect.left) / rect.width) * 100;
-    const y = ((e.clientY - rect.top) / rect.height) * 100;
+  const img = mainImageContainer.querySelector("img");
+  const rect = mainImageContainer.getBoundingClientRect();
+  const x = ((e.clientX - rect.left) / rect.width) * 100;
+  const y = ((e.clientY - rect.top) / rect.height) * 100;
 
-    // Show zoom container and fill the image area
-    zoomContainer.style.display = "block";
-    zoomContainer.innerHTML = `<img src="${img.src}" style="width:100%;height:100%;object-fit:cover;transform:scale(1.5);transform-origin:${x}% ${y}%;">`;
+  // Show zoom container and fill the image area
+  zoomContainer.style.display = "block";
+  zoomContainer.innerHTML = `<img src="${img.src}" style="width:100%;height:100%;object-fit:cover;transform:scale(1.5);transform-origin:${x}% ${y}%;">`;
 });
 
 mainImageContainer.addEventListener("mouseleave", function () {
-    zoomContainer.style.display = "none";
-    zoomContainer.innerHTML = "";
+  zoomContainer.style.display = "none";
+  zoomContainer.innerHTML = "";
 });
